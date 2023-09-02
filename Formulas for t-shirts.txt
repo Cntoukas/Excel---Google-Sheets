@@ -1,0 +1,36 @@
+=IFERROR(VLOOKUP(IF(OR(G3="Medium", G3="M"), "Medium", G3), SKUs!A:B, 2, FALSE), "")
+
+
+=IFERROR(VLOOKUP(IF(OR(G3="Medium", G3="M"), "Medium", G3), SKUs!D:E, 2, FALSE), "")
+
+
+
+
+=IFERROR(
+    IF(
+        OR(G3="Medium", G3="M"),
+        VLOOKUP("Medium", SKUs!D:E, 2, FALSE),
+        IF(
+            OR(G3="Large", G3="L"),
+            VLOOKUP("Large", SKUs!D:E, 2, FALSE),
+            IF(
+                OR(G3="XL", G3="X-Large"),
+                VLOOKUP("X-Large", SKUs!D:E, 2, FALSE),
+                IF(
+                    OR(G3="XXL", G3="XX-Large"),
+                    VLOOKUP("XX-Large", SKUs!D:E, 2, FALSE),
+                    IF(
+                        OR(G3="XXXL", G3="XXX-Large"),
+                        VLOOKUP("XXX-Large", SKUs!D:E, 2, FALSE),
+                        IF(
+                            OR(G3="S", G3="Small"),
+                            VLOOKUP("Small", SKUs!D:E, 2, FALSE),
+                            ""
+                        )
+                    )
+                )
+            )
+        )
+    ),
+    ""
+)

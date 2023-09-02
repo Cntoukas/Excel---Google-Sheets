@@ -1,0 +1,1 @@
+=IF(VLOOKUP(A29,'[SKU Lookup test.xlsx]EG'!$A:$B,2,0)<>0, "IN", "OOS")

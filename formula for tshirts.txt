@@ -1,0 +1,6 @@
+=QUERY(
+IMPORTRANGE("https://docs.google.com/spreadsheets/d/1yRGrZ2TDVoBmEVbzx11Svpb19NQQpdJrkFvxlx0JJ3Q/edit?pli=1#gid=646744832", "New Starters - Main Sheet!A:AD"),
+ "SELECT Col1, Col3, Col4, Col5, Col8, Col9, Col10, Col17, Col30
+ WHERE (Col1 = 'Store' OR Col1 = 'Trainer - FST' or Col1 = 'Trainer - GST' OR Col1 = 'Trainer - UK 2') 
+AND (Col9 = '5 Shirts & 2 Jumpers' or Col9 = '3 Shirts & 1 Jumper') 
+AND Col10 is not null", 1)
